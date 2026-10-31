@@ -1,0 +1,21 @@
+
+# CMake and Visual Studio build output
+out/
+build/
+CMakeFiles/
+CMakeCache.txt
+.vs/
+
+# Compiled files
+*.exe
+*.obj
+*.pdb
+*.ilk
+
+# Python cache (future integration)
+__pycache__/
+*.pyc
+
+# Large research datasets and archives
+*.zip
+data/raw/
