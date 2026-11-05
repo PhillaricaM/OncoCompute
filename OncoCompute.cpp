@@ -5,6 +5,7 @@
 
 #include "oncocompute/csv_reader.hpp"
 #include "oncocompute/data_validation.hpp"
+#include "oncocompute/csv_export.hpp"   
 
 int main() {
 
@@ -66,8 +67,26 @@ int main() {
 
         std::cout << "\nTotal records: " << records.size();
         std::cout << "\nValid records: " << valid_count;
-        std::cout << "\nInvalid records: " << invalid_count
+        std::cout << "\nInvalid records: " << invalid_count 
             << '\n';
+
+
+        // Export validated NCI-60 records for Tableau.
+        std::string output_filename =
+            std::string(ONCOCOMPUTE_DATA_DIR) +
+            "/../results/nci60_validated.csv";
+
+        oncocompute::export_validated_csv(
+            records,
+            output_filename
+        );
+
+        std::cout << "\nCSV export completed successfully!"
+            << "\nFile: " << output_filename
+            << '\n';
+
+
+
 
     }
     catch (const std::exception& error) {
