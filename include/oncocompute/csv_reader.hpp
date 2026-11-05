@@ -2,7 +2,14 @@
 #pragma once
 
 #include <string>
+#include <vector>
+
+#include "oncocompute/nci_record.hpp"
 
 namespace oncocompute {
-    void inspect_csv(const std::string& filename);
+
+    std::vector<NCIRecord> load_nci_csv(
+        const std::string& filename
+    );
+
 }
