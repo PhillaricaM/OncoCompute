@@ -17,7 +17,8 @@ add_executable(OncoCompute
     "OncoCompute.h"
     "src/statistics.cpp"
     "src/csv_reader.cpp"
-)
+    "src/data_validation.cpp"
+    "src/csv_export.cpp")
 
 # Include our scientific library headers.
 target_include_directories(OncoCompute PRIVATE
